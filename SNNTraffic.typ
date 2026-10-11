@@ -30,7 +30,7 @@
 
 = Introduction
 
-Traffic congestion is a pervasive problem in modern urban environments, resulting in billions of hours of lost productivity, excessive fuel consumption, and increased greenhouse gas emissions @simeone2026modern. Traditional approaches to traffic light control include fixed-timed controllers, which operate on predetermined schedules, and actuated controllers, which use inductive loop detectors to extend green phases on demand. While simple and reliable, these methods fail to respond to complex, dynamic traffic patterns across multiple intersections.
+Traffic congestion is a pervasive problem in modern urban environments, resulting in billions of hours of lost productivity, excessive fuel consumption, and increased greenhouse gas emissions. Traditional approaches to traffic light control include fixed-timed controllers, which operate on predetermined schedules, and actuated controllers, which use inductive loop detectors to extend green phases on demand. While simple and reliable, these methods fail to respond to complex, dynamic traffic patterns across multiple intersections.
 
 Recent advances in Artificial Intelligence have produced Deep Reinforcement Learning (DRL) agents that learn adaptive traffic signal policies directly from simulation. These approaches, typically implemented with standard Artificial Neural Networks (ANNs), achieve superior performance in metrics such as average waiting time and intersection throughput. However, ANN-based controllers require continuous forward passes at every decision step, consuming considerable energy and computational resources. This makes them impractical for large-scale deployment on low-power edge devices at intersections.
 
@@ -145,7 +145,7 @@ SNNs trained with surrogate gradients can be harder to converge than standard AN
 We cannot guarantee access to neuromorphic chips such as Loihi or SpiNNaker2 for energy measurement. *Alternative:* Estimate energy consumption analytically by counting spike events and comparing with equivalent ANN FLOPs, following the methodology of Arfa et al. @arfa2025hardware.
 
 == Training Instability
-DQN with function approximation is known to suffer from instability, which may be exacerbated by the non-differentiable nature of spikes. *Alternative:* Implement experience replay and target networks; if issues persist, adopt a soft actor-critic framework as in SANSAC @arfa2025hardware.
+DQN with function approximation is known to suffer from instability, which may be exacerbated by the non-differentiable nature of spikes. *Alternative:* Implement experience replay and target networks; if issues persist, adopt a soft actor-critic framework as in SANSAC.
 
 == Simulation Overhead
 SUMO itself consumes resources, and running it within Colab through SUMO-RL may introduce bottlenecks. *Alternative:* Reduce simulation speed.
